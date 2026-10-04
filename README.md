@@ -14,31 +14,25 @@ Fail `dev.ps1` on mõeldud ainult arenduse abivahendiks. Selle abil saab arendam
 
 ## Õpetaja GitHubi lingi eemaldamine
 
-Pärast projekti allalaadimist või kloonimist tuleks eemaldada õpetaja GitHubi repositooriumi seos. Nii jääb projekt õpilase arvutisse Git-repositooriumina alles, kuid ei ole enam seotud õpetaja GitHubi repositooriumiga.
+Pärast projekti allalaadimist või kloonimist tuleks eemaldada õpetaja GitHubi repositooriumi seos. Nii jääb projekt arvutisse Git-repositooriumina alles, kuid ei ole enam seotud õpetaja GitHubi repositooriumiga.
 
 ### Visual Studio Code
 
-1. Ava projekti kaust **Visual Studio Code'is**.
-2. Ava terminal menüüst **Terminal → New Terminal**.
-3. Kontrolli, millise GitHubi repositooriumiga projekt on seotud:
+Õpetaja GitHubi repositooriumi seose saab eemaldada otse **Visual Studio Code'i Source Control** vaate kaudu ilma käsurida kasutamata.
 
-```powershell
-git remote -v
-```
+1. Ava projekti kaust **Visual Studio Code'is** (kui veel pole).
+2. Ava vasakult menüüst **Source Control**.
+3. Vajuta **Source Control** paneeli ülaosas **Changes** real kolme punkti **`...`** nupule.
+4. Vali avanenud menüüst **Remote → Remove Remote**.
+5. Kui projektiga on seotud GitHubi repositoorium, kuvatakse olemasolevate remote'ide nimekiri.
+6. Vali eemaldamiseks **`origin`**.
+7. Pärast `origin` eemaldamist ei ole kohalik projekt enam õpetaja GitHubi repositooriumiga seotud.
 
-4. Eemalda õpetaja GitHubi repositooriumi link:
+> **NB!** Remote'i eemaldamine ei kustuta projekti ega kohalikke Git commit'e. Eemaldatakse ainult ühendus õpetaja GitHubi repositooriumiga.
 
-```powershell
-git remote remove origin
-```
+Kui soovid hiljem projekti siduda mõne teise GitHubi repositooriumiga, vali:
 
-5. Kontrolli tulemust:
-
-```powershell
-git remote -v
-```
-
-Kui viimane käsk enam `origin` aadressi ei näita, on õpetaja GitHubi link eemaldatud.
+**Source Control → `...` → Remote → Add Remote**, või kasuta endale sobivat lisamise variant.
 
 ## PowerShelli käsurealt
 
